@@ -1,7 +1,28 @@
-export default function Card({children,color}) {
+export default function Card({userData}) {
   return (
-    <div style={{padding:"10px",alignItems:"center", display:"flex",flexDirection:"column",justifyContent:"center",wordBreak:"break-word",overflow:"hidden",height:"200px" ,width:"400px",borderRadius:"5px",border:"solid black 2px",background:"yellow",color:color}}>
-        {children}
+    <div >
+      <table border={1}>
+          <thead>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Email</td>
+            
+            </tr>
+          </thead>
+          <tbody>{
+            userData.map((userData)=>(
+            <tr key={userData.id}>
+              <td >{userData.id}</td>
+              <td>{userData.name}</td>
+              <td>{userData.age}</td>
+              <td>{userData.email}</td>
+            </tr>
+            ))
+            }
+          </tbody>
+        </table>
     </div>
 
     );
